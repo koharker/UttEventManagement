@@ -3,18 +3,19 @@ blockspring.runParsed("query-google-spreadsheet", {
     // Here is where you need to decide what data you are grabbing with the Google query syntax
     // I am finding elements that match the variable num, which is from a previous part of the code
     // Google syntax makes you request columns with letters as opposed to your column titles.
-    "query": "SELECT A, C WHERE B ="+num,
+    "query": "SELECT A, C WHERE J =" + "Orch",
     // This is the full URL of your sheet. Just copy and paste from your browser.
-    "url": "YOURURLHERE" 
+    "url": "https://docs.google.com/spreadsheets/d/146pDeR841s410i2EnxIe4Xqaj64Z7q6dDLzz91MVbgA/edit#gid=652818996" 
     //Cache is false so that your browser does not run an old function when you cnange your code
     }, { cache: false, expiry: 7200}, function(res) {
         // All results are part of the res.params.data object.
         // in my case, I requested two columns from my spreadsheet, one named skill and one named key.
         //There is one matching row in this case, with two elements
-      	var skill=res.params.data[0]['skill'];
-      	var key=res.params.data[0]['key'];
+      	var time=res.params.data[0]['Time'];
+      	var group=res.params.data[0]['Group'];
 });
 
+console.log(time);
 
 
 
